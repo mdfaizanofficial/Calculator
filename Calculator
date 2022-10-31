@@ -1,0 +1,38 @@
+package Programming.Practice; 
+  
+ import java.util.Scanner; 
+  
+ public class Calculator_using_Switch { 
+     public static void main(String[] args) { 
+         Scanner sc = new Scanner(System.in); 
+         String stop; 
+         do { 
+             System.out.print("Enter your symbol:"); 
+             char symbol = sc.next().charAt(0); 
+             System.out.print("Enter your two number::"); 
+             int num1 = sc.nextInt(); 
+             int num2 = sc.nextInt(); 
+             switch (symbol) { 
+                 case '+': 
+                     System.out.println(num1 + num2); 
+                     break; 
+                 case '-': 
+                     System.out.println(num1 - num2); 
+                     break; 
+                 case '*': 
+                     System.out.println(num1 * num2); 
+                 case '/': 
+                     if (num2 != 0) { 
+                         System.out.println(num1 / num2); 
+                         break; 
+                     } 
+                 case '%': 
+                     System.out.print(num1 % num2); 
+                 default: 
+                     System.out.println("invalid symbol"); 
+             } 
+             System.out.print("Press s to continue:"); 
+             stop = sc.next(); 
+         } while (stop.equals("s") || stop.equals("S")); 
+     } 
+ }
